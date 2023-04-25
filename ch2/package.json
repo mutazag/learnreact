@@ -1,0 +1,16 @@
+{
+  "name": "ch2",
+  "version": "1.0.0",
+  "description": "chapter 2",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mutaz mutazag@hotmail.com https://www.mutazag.com",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.2"
+  }, 
+  "config": {
+    "port": 8888}
+}
