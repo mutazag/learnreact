@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>My First Web Page</title>
+    <!-- include react -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+
+    <script>
+        function start(){ 
+
+            class Bookmark extends React.Component {
+                render() {
+                    return React.createElement('li', {},
+                        React.createElement('h2', {}, this.props.title),
+                        React.createElement('a', 
+                            {href: this.props.url},
+                             this.props.description)
+                    );
+                }
+            }
+
+            const rootElement = React.createElement('div', {}, 
+                React.createElement('h1', {}, 'My Bookmarks'), 
+                React.createElement('ul', {}, 
+                    React.createElement(Bookmark, 
+                        {title: 'MDN', 
+                        url: 'https://developer.mozilla.org', 
+                        description: 'The only place to find web documentation.'}),
+                    React.createElement(Bookmark, 
+                        {title: 'Google', 
+                        url: 'https://www.google.com', 
+                        description: 'Where we find everything else.'})
+                )
+            ); 
+
+            ReactDOM.render(rootElement, document.getElementById('mainContainer'));
+
+
+
+        }; 
+    </script>
+</head>
+
+<body onload="start();">
+    <div id="mainContainer"></div>
+</body>
+
+
+</html>

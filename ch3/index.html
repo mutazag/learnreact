@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First Web Page</title>
+    <meta charset="utf-8" />
+    <!-- include react -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+
+    <script>
+        function start(){
+            const rootElement = 
+            React.createElement('div', {}, 
+                React.createElement('h1', {} , "Bookmarks"), 
+                React.createElement('ul', {}, 
+                    React.createElement('li', {}, 
+                        React.createElement('h2', {}, "Etherient"),
+                        React.createElement('a', 
+                            {href: "https://etherient.com"},
+                             "https://etherient.com")),
+                    React.createElement('li', {},
+                        React.createElement('h2', {}, "Google"),
+                        React.createElement('a', 
+                            {href: "https://google.com"},
+                             "https://google.com")), 
+                    React.createElement('li', {},
+                        React.createElement('h2', {}, "Facebook"),
+                        React.createElement('a', 
+                            {href: "https://facebook.com", prop1: "mutaz"},
+                             "https://facebook.com")
+                    )
+                )
+            );
+            ReactDOM.render(rootElement, document.getElementById('mainContainer')); 
+        }
+    </script>
+</head>
+<body onload="start();">
+    <div id="mainContainer"></div>
+</body>
+</html>
