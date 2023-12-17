@@ -7,15 +7,16 @@ function start() {
         }
 
         title = this.props.title;
-        titleStyle = { color: this.props.color };
+        titleStyle = { color: this.props.color, visibility: this.props.visibility };
         originalColor = this.props.color;
         counter = this.props.counter;
 
         static defaultProps = { 
             counter: 1 , 
-            description :'unknow description', 
+            description :'unknown description', 
             title : 'no title', 
-            color : 'red' };
+            color : 'red' , 
+            visibility: 'visible'};
         static propTypes = { counter: PropTypes.number, description: PropTypes.string, title: PropTypes.string };
 
 
@@ -47,6 +48,19 @@ function start() {
                                 this.setState({});
                             }}>
                         Color </button>
+                    <button onClick={
+                        () => { // set visbility of h2 to hidden
+                            if (this.titleStyle.visibility == "hidden") {
+                                this.titleStyle.visibility = "visible";
+                            } else {
+                                this.titleStyle.visibility = "hidden";
+                            }
+                            console.log(`visibility: ${this.titleStyle.visibility}`)
+                            this.setState({});
+                        }
+                    }>
+                        Hide </button>
+
                 </li>
             );
         }
@@ -60,7 +74,7 @@ function start() {
                 <Bookmark title="Facebook" href="http://facebook.com" description="Social Media" />
                 <Bookmark color="grey" href="http://twitter.com" counter={12313} />
                 <Bookmark title="mutazag" href="https://www.mutazag.com"/>
-                <Bookmark color="green" href="https://www.microsoft.com" counter={3}/>
+                <Bookmark color="green" href="https://www.microsoft.com" counter={3} visibility='hidden'/>
             </ul>
         </div>,
 

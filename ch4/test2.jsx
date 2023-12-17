@@ -1,4 +1,4 @@
 const button = <MaterialButton color="red"
-    onClick="alert('clicked');">
-        Click Me! 
-    </MaterialButton>
+    onClick={() => console.log('clicked')}>
+    <span>Click me</span>
+</MaterialButton>

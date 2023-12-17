@@ -24,7 +24,8 @@ function start() {
       _this = _super.call(this, props);
       _defineProperty(_assertThisInitialized(_this), "title", _this.props.title);
       _defineProperty(_assertThisInitialized(_this), "titleStyle", {
-        color: _this.props.color
+        color: _this.props.color,
+        visibility: _this.props.visibility
       });
       _defineProperty(_assertThisInitialized(_this), "originalColor", _this.props.color);
       _defineProperty(_assertThisInitialized(_this), "counter", _this.props.counter);
@@ -58,16 +59,28 @@ function start() {
             console.log("color: ".concat(_this2.titleStyle.color));
             _this2.setState({});
           }
-        }, "Color "));
+        }, "Color "), /*#__PURE__*/React.createElement("button", {
+          onClick: function onClick() {
+            // set visbility of h2 to hidden
+            if (_this2.titleStyle.visibility == "hidden") {
+              _this2.titleStyle.visibility = "visible";
+            } else {
+              _this2.titleStyle.visibility = "hidden";
+            }
+            console.log("visibility: ".concat(_this2.titleStyle.visibility));
+            _this2.setState({});
+          }
+        }, "Hide "));
       }
     }]);
     return Bookmark;
   }(React.Component);
   _defineProperty(Bookmark, "defaultProps", {
     counter: 1,
-    description: 'unknow description',
+    description: 'unknown description',
     title: 'no title',
-    color: 'red'
+    color: 'red',
+    visibility: 'visible'
   });
   _defineProperty(Bookmark, "propTypes", {
     counter: PropTypes.number,
@@ -92,6 +105,7 @@ function start() {
   }), /*#__PURE__*/React.createElement(Bookmark, {
     color: "green",
     href: "https://www.microsoft.com",
-    counter: 3
+    counter: 3,
+    visibility: "hidden"
   }))), document.getElementById("mainContainer"));
 }
